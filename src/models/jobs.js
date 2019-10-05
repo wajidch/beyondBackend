@@ -23,6 +23,16 @@ module.exports = function (sequelize, DataTypes) {
         salary: {
             type: DataTypes.STRING(45)
         },
+        ads_picture:{
+            type: DataTypes.STRING(45)
+
+        },
+        skill:{
+            type: DataTypes.STRING(500)
+        },
+        technical_description:{
+            type: DataTypes.STRING(500)
+        }
        
     },
         {

@@ -12,6 +12,7 @@ const jobStatus=require('../controllers/jobs/job-status');
 const jobList=require('../controllers/jobs/all-job');
 const updateJob=require('../controllers/jobs/update-job');
 const teamList=require('../controllers/jobs/team-list');
+const jobDetail=require('../controllers/jobs/job_detail');
 
 
 module.exports = [
@@ -115,6 +116,34 @@ module.exports = [
             });
         },
       
+        plugins: plugins.swaggerPlugin
+    }
+},
+{
+    method: 'GET',
+    path: config.apiPrefix + '/job/jobdetail',
+    config: {
+        description: 'get detail of job',
+        notes: 'get detail of job.',
+        tags: ['api', 'Job'],
+        auth: false,
+
+        handler: (request, reply) => {
+            jobDetail(request.query, (err, results) => {
+                if (err) {
+                    console.log(err);
+                    reply(responses.makeMessageResponse(false, statusCodes.EXPECTATION_FAILED, err.message.replace(/[^a-zA-Z ]/g, ''))).code(statusCodes.INTERNAL_SERVER_ERROR);
+                } else {
+                    reply(results);
+                }
+            });
+        },
+        validate: {
+            query: validator.jobDetail,
+            failAction: (request, reply, source, err) => {
+                reply(responses.makeMessageResponse(false, statusCodes.BAD_REQUEST, err.message.replace(/[^a-zA-Z ]/g, '')));
+            }
+        },
         plugins: plugins.swaggerPlugin
     }
 },

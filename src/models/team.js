@@ -23,6 +23,9 @@ module.exports = function (sequelize, DataTypes) {
         email: {
             type: DataTypes.STRING(45)
         },
+        description:{
+            type: DataTypes.STRING(500)
+        }
         
     
 

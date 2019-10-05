@@ -18,6 +18,9 @@ const addJob=Joi.object({
     description: Joi.string().empty('').optional(),
     expereince:Joi.string().empty('').optional(),
     salary:Joi.string().empty('').optional(),
+    ads_picture:Joi.string().empty('').optional(),
+    skill:Joi.string().empty('').optional(),
+    technical_description:Joi.string().empty('').optional(),
   
    
    
@@ -29,6 +32,7 @@ const addteam=Joi.object({
     designation: Joi.string().empty('').optional(),
     phone:Joi.string().empty('').optional(),
     email:Joi.string().empty('').optional(),
+    description:Joi.string().empty('').optional(),
   
    
    
