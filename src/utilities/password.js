@@ -25,17 +25,16 @@
  * @param params will be holding plain password given by user
  * @param reply return hash password if no error generating password
  */
-const hashPassword = (params, reply) => {
-    bcrypt.hash(params.password, 10)
-        .then(hash => {
-            return reply(null, hash)
-        })
-        .catch(err => {
-            return reply(err)
-        })
-};
+// const hashPassword = (params, reply) => {
+//     bcrypt.hash(params.password, 10)
+//         .then(hash => {
+//             return reply(null, hash)
+//         })
+//         .catch(err => {
+//             return reply(err)
+//         })
+// };
 
-module.exports = {
-    comparePassword: comparePassword,
-    hashPassword: hashPassword
-};
+// module.exports = {
+//     hashPassword: hashPassword
+// };
