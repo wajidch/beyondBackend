@@ -18,13 +18,12 @@ const Op = model.Sequelize.Op;
 module.exports = (req, callback) => model[userModel].findOne({
     where: {
 
-        [Op.or]: [
-            {
+      
+            
                 email: req.email,
-            },
-               { phone: req.email}
+            
            
-        ],
+        
 
         password: req.password,
         deleted: 0,

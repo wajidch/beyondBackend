@@ -1,6 +1,6 @@
 'use strict';
 
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 
 /**
@@ -8,16 +8,16 @@ const bcrypt = require('bcrypt');
  * @param params will be holding plain password entered by user and hash password which was in database
  * @param reply will return the response of boolean if password matched then true otherwise false
  */
-const comparePassword = (params, reply) => {
-    bcrypt.compare(params.password, params.dbPassword, (err, valid) => {
-        if (err) return reply(err);
-        if (!valid) {
-            return reply(null, false)
-        } else {
-            return reply(null, true)
-        }
-    });
-};
+// const comparePassword = (params, reply) => {
+//     bcrypt.compare(params.password, params.dbPassword, (err, valid) => {
+//         if (err) return reply(err);
+//         if (!valid) {
+//             return reply(null, false)
+//         } else {
+//             return reply(null, true)
+//         }
+//     });
+// };
 
 
 /**
